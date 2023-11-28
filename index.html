@@ -1,0 +1,108 @@
+<html>
+<style>
+table, th, td {
+  border:0px solid black;
+}
+table {
+  border-spacing: 20px;
+}
+body {background-color: powderblue;}
+
+</style>
+<body>
+
+
+
+
+
+<table style="width:100%", "height:100%", "border:1px solid black">
+	
+    
+<th>    
+
+
+
+
+  <iframe src="iframe.html" width="100%" height="100" style="border: none;"></iframe>
+
+
+
+  <table style="width:100%">
+    <th> <img src="tenis.jpg" width="50" height="60"> </th>
+    <th><a href="sitetenis2.html"> MIZUNO FALCON 4 <br>Preço R$150 </a>
+    
+      <br>
+     
+      qtd: <input type="number" value="1" min="1" max="10" id="qtd1">
+      <button type="button" id="adicionar1" id="produto1" onclick="AddCarrinho('MIZUNO FALCON 4', document.getElementById('qtd1').value, '150', 1)"> Comprar </button>
+
+    </th>
+
+
+    <th> <img src="Tenis2.jpg" width="50" height="60"></th>
+
+    <th><a href="segundaPag.html"> Nike REVOLUTION 6 <br>Preço R$200 </a>
+    
+      <br> 
+      
+      qtd: <input type="number" value="1" min="1" max="10" id="qtd1">
+      <button type="button" id="adicionar1" id="produto1" onclick="AddCarrinho(' Nike REVOLUTION 6', document.getElementById('qtd1').value, '200', 1)"> Comprar </button>
+
+  </table>
+
+<table style="width:100%">
+  <th> <img src="mizuno.jpg" width="50" height="60"> </th>
+  <th><a href="sitetenis3.html"> MIZUNO WAVE LASER <br>Preço R$200 </a>
+
+    <br> 
+
+    qtd: <input type="number" value="1" min="1" max="10" id="qtd1">
+    <button type="button" id="adicionar1" id="produto1" onclick="AddCarrinho('MIZUNO wave laser', document.getElementById('qtd1').value, '150', 1)"> Comprar </button>
+
+  <th> <img src="tenis3.jpg" width="50" height="60"></th>
+  <th><a href="sitetenis4.html"> Nike Revolution 6 Next Nature <br>Preço R$200 </a>
+
+    <br>
+
+    qtd: <input type="number" value="1" min="1" max="10" id="qtd1">
+    <button type="button" id="adicionar1" id="produto1" onclick="AddCarrinho('Nike Revolution 6 Next Nature', document.getElementById('qtd1').value, '150', 1)"> Comprar </button>
+
+</table>
+
+  <!-- Carrinho de Compras -->
+
+  <table id="carrinho" onshow= "console.log (1)">
+      <th>
+        <a href="Untitled-2.html"> Ver Carrinho de compras </a>
+      </th>
+  </table>
+
+
+    
+
+        
+  <script>
+ function AddCarrinho(produto, qtd, valor, posicao)
+ { 
+ localStorage.setItem("produto" + posicao, produto);
+ localStorage.setItem("qtd" + posicao, qtd);
+ valor = valor * qtd;
+ localStorage.setItem("valor" + posicao, valor);
+ alert("Produto adicionado ao carrinho!");
+ }
+</script>
+  </script>
+    
+
+
+
+
+<table style="width:100%">
+
+
+<th><br><br><br>Todas os tipos de tênis esportivos que você pode imaginar<br>R.Domingos de Madureira, 323<br>Instagram: @Loja_dos_Freitas </th>
+
+
+</table>
+</body>
+</html>

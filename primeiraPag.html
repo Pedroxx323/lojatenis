@@ -1,0 +1,126 @@
+<html>
+<style>
+table, th, td {
+  border:0px solid black;
+}
+table {
+  border-spacing: 20px;
+}
+body {background-color: powderblue;}
+
+</style>
+<body>
+
+
+
+
+
+<table style="width:100%", "height:100%", "border:1px solid black">
+	
+    
+<th>    
+
+
+
+
+  <iframe src="iframe.html" width="100%" height="100" style="border: none;"></iframe>
+
+
+
+  <table style="width:100%">
+    <th> <img src="tenis.jpg" width="50" height="60"> </th>
+    <th><a href="sitetenis2.html"> MIZUNO FALCON 4 <br>Preço R$150 </a>
+    
+      <br>
+      <button onclick="adicionarAoCarrinho('MIZUNO FALCON 4', 150.00)">Adicionar ao carrinho</button>
+
+    </th>
+
+
+    <th> <img src="Tenis2.jpg" width="50" height="60"></th>
+
+    <th><a href="segundaPag.html"> Nike REVOLUTION 6 <br>Preço R$200 </a>
+    
+      <br> 
+      
+      <button onclick="adicionarAoCarrinho('Nike REVOLUTION 6', 200.00)">Adicionar ao carrinho</button> </th>
+
+  </table>
+
+<table style="width:100%">
+  <th> <img src="mizuno.jpg" width="50" height="60"> </th>
+  <th><a href="sitetenis3.html"> Tênis Atletismo <br>Preço R$200 </a>
+
+    <br> 
+
+    <button onclick="adicionarAoCarrinho('Nike REVOLUTION 6', 200.00)">Adicionar ao carrinho</button> </th>
+  <th> <img src="mizuno3.jpg" width="50" height="60"></th>
+  <th><a href="sitetenis4.html"> Tênis Atletismo <br>Preço R$200 </a>
+    <br>
+    <button onclick="adicionarAoCarrinho('MIZUNO FALCON 4', 150.00)">Adicionar ao carrinho</button></th>
+</table>
+
+  <!-- Carrinho de Compras -->
+  <h2>Carrinho de Compras</h2>
+  <table id="carrinho" onshow= "console.log (1)">
+      <th>
+          <th>Produto</th>
+          <th>Preço</th>
+          <th><button onclick= "limparcarrinho()"></button></th>
+      </th>
+  </table>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+            // Esta função será chamada quando o DOM estiver totalmente carregado
+            var arrayStringcarrinho = localStorage.getItem('carrinho');
+
+// Convertendo a string de volta para um array
+     var arraycarrinho = JSON.parse(arrayStringcarrinho);
+     for (let index = 0; index < arraycarrinho.length; index++) {
+      adicionarAoCarrinho(arraycarrinho[index].descricao,arraycarrinho[index].preco)
+  }
+    
+
+        
+        });
+
+      function adicionarAoCarrinho(produto, preco) {
+          // Adicionar ao carrinho
+          const carrinho = document.getElementById("carrinho");
+          const novaLinha = carrinho.insertRow(-1);
+
+          const celulaProduto = novaLinha.insertCell(0);
+          celulaProduto.innerHTML = produto;
+
+          const celulaPreco = novaLinha.insertCell(1);
+          celulaPreco.innerHTML = `R$ ${preco.toFixed(2)}`;
+          var arrayStringcarrinho = localStorage.getItem('carrinho');
+
+     var arraycarrinho = JSON.parse(arrayStringcarrinho);
+
+        var obj_carrinho = {
+           descricao: produto,
+           preco: preco
+        }
+        arraycarrinho.push(obj_carrinho);
+        var arraycarrinhostorage = JSON.stringify(arraycarrinho)
+
+        localStorage.setItem('carrinho', arraycarrinhostorage);
+
+      }
+  </script>
+    
+
+
+
+
+<table style="width:100%">
+
+
+<th><br><br><br>Todas os tipos de tênis esportivos que você pode imaginar<br>R.Domingos de Madureira, 323<br>Instagram: @Loja_dos_Freitas </th>
+
+
+</table>
+</body>
+</html>
